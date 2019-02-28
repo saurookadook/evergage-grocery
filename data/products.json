@@ -1,0 +1,74 @@
+[
+    {
+        "id": "evg01",
+        "name": "Gala Apples",
+        "image": "https://media.itemmaster.com/0/0/0/718/f51b1818-99f5-426b-8c64-026daf8cf7d3.jpg?originalFormat=tif&tkn=bbb4b429-c5ec-4dee-a33d-48b86292df09&size=600x600",
+        "price": "20.00",
+        "attributes": {
+            "weight": "5.00",
+            "unit": "lbs",
+            "calories": "105",
+            "category": "fruit"
+        }
+    },
+    {
+        "id": "evg02",
+        "name": "Asparagus",
+        "image": "https://media.itemmaster.com/0/0/0/814/44a50528-07af-412a-98df-b933932598c2.jpg?originalFormat=tif&tkn=bbb4b429-c5ec-4dee-a33d-48b86292df09&size=600x600",
+        "price": "10.99",
+        "attributes": {
+            "weight": "10.25",
+            "unit": "oz",
+            "calories": "2000",
+            "category": "vegetable"
+        }
+    },
+    {
+        "id": "evg03",
+        "name": "Bacon",
+        "image": "https://media.itemmaster.com/0/0/0/451/9548ea1a-30f5-4dff-8972-acebdaa46711.jpg?originalFormat=tif&tkn=bbb4b429-c5ec-4dee-a33d-48b86292df09&size=600x600",
+        "price": "16.99",
+        "attributes": {
+            "weight": "14",
+            "unit": "strips",
+            "calories": "300",
+            "category": "meat"
+        }
+    },
+    {
+        "id": "evg04",
+        "name": "Yogurt",
+        "image": "https://media.itemmaster.com/0/0/0/25/ab26e6d3-080b-4c11-81e8-8eb3d3f257db.jpg?originalFormat=tif&tkn=bbb4b429-c5ec-4dee-a33d-48b86292df09&size=600x600",
+        "price": "7.99",
+        "attributes": {
+            "weight": "6.15",
+            "unit": "liters",
+            "calories": "456",
+            "category": "dairy"
+        }
+    },
+    {
+        "id": "evg05",
+        "name": "Bread",
+        "image": "https://media.itemmaster.com/0/0/0/321/e5896cbc-1d03-421a-86c0-6c0bdeb34c89.jpg?originalFormat=tif&tkn=bbb4b429-c5ec-4dee-a33d-48b86292df09&size=600x600",
+        "price": "2.50",
+        "attributes": {
+            "weight": "500.00",
+            "unit": "g",
+            "calories": "8",
+            "category": "bakery"
+        }
+    },
+    {
+        "id": "evg06",
+        "name": "Pasta Sauce",
+        "image": "https://media.itemmaster.com/0/0/0/394/51b562af-48f9-4b4e-b996-7a39832b1d2a.jpg?originalFormat=tif&tkn=bbb4b429-c5ec-4dee-a33d-48b86292df09&size=600x600",
+        "price": "6.33",
+        "attributes": {
+            "weight": "1.25",
+            "unit": "lbs",
+            "calories": "200",
+            "category": "canned goods"
+        }
+    }
+]

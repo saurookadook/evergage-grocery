@@ -1,0 +1,39 @@
+{
+  "name": "evergage-tech-test",
+  "private": true,
+  "description": "Evergage Tech Test",
+  "version": "0.1.0",
+  "author": "Dan Cohen",
+  "dependencies": {
+    "fs": "0.0.1-security",
+    "gatsby": "^2.0.111",
+    "gatsby-image": "^2.0.29",
+    "gatsby-plugin-manifest": "^2.0.17",
+    "gatsby-plugin-offline": "^2.0.22",
+    "gatsby-plugin-react-helmet": "^3.0.6",
+    "gatsby-plugin-s3": "^0.2.4",
+    "gatsby-plugin-sharp": "^2.0.20",
+    "gatsby-source-filesystem": "^2.0.20",
+    "gatsby-transformer-json": "^2.1.8",
+    "gatsby-transformer-sharp": "^2.1.13",
+    "html-loader": "^0.5.5",
+    "jquery": "^3.3.1",
+    "prop-types": "^15.6.2",
+    "react": "^16.7.0",
+    "react-dom": "^16.7.0",
+    "react-helmet": "^5.2.0"
+  },
+  "keywords": [
+    "gatsby"
+  ],
+  "license": "MIT",
+  "scripts": {
+    "build": "npm run clean && gatsby build",
+    "clean": "rm -rf public && rm -rf .cache",
+    "develop": "npm run clean && gatsby develop",
+    "start": "npm run develop",
+    "serve": "gatsby serve",
+    "test": "echo \"Write tests! -> https://gatsby.app/unit-testing\"",
+    "deploy": "npm run build && gatsby-plugin-s3 deploy"
+  }
+}

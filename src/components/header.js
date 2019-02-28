@@ -6,9 +6,6 @@ import MiniCart from "./minicart";
 
 export default class Header extends React.Component {
 
-  componentDidMount() {
-    document.getElementsByClassName('cart-number')[0].innerText = Cart.renderMiniCart()
-  }
   render() {
     return (
       <header

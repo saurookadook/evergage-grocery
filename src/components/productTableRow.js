@@ -10,7 +10,7 @@ function getTableValue(props) {
 
 const ProductTableRow = (props) => {
     return (
-        <tr className={props.attr}>
+        <tr>
             <td>{props.attr}</td>
             {getTableValue(props)}
         </tr>

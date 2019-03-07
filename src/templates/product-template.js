@@ -16,11 +16,15 @@ export default class Template extends React.Component {
     }
     handleSubmit = (e) => {
         e.preventDefault()
-        Cart.addToCart(this.state.product, this.state.quantity).then((cartText) => {
-            if (cartText) {
-                document.getElementsByClassName('cart-number')[0].innerText = cartText
-            }
-        })
+        try {
+            Cart.addToCart(this.state.product, this.state.quantity).then((cartText) => {
+                if (cartText) {
+                    document.getElementsByClassName('cart-number')[0].innerText = cartText
+                }
+            })
+        } catch (e) {
+            document.getElementsByClassName('cart-number')[0].innerText = "ERROR"
+        }
         console.log(this.state.product.name)
     }
     handleChange = (e) => {

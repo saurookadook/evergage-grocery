@@ -12,7 +12,7 @@ class Cart {
     }
     
     addToCart(product, quantity) {
-        // add product
+        return "TODO"
     }
 }
 

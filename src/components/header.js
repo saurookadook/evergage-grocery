@@ -7,7 +7,14 @@ import MiniCart from "./minicart";
 export default class Header extends React.Component {
 
   componentDidMount() {
-    document.getElementsByClassName('cart-number')[0].innerText = Cart.addToCart()
+    var addToCartPromise = Cart.addToCart()
+    if (addToCartPromise) {
+      addToCartPromise.then((cartText) => {
+        if (cartText) {
+            document.getElementsByClassName('cart-number')[0].innerText = cartText
+        }
+      })
+    }
   }
 
   render() {

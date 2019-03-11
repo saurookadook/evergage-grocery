@@ -25,7 +25,6 @@ export default class Template extends React.Component {
         } catch (e) {
             document.getElementsByClassName('cart-number')[0].innerText = "ERROR"
         }
-        console.log(this.state.product.name)
     }
     handleChange = (e) => {
         this.setState({quantity: parseInt(e.target.value)})

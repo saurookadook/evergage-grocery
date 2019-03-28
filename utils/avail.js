@@ -6,6 +6,7 @@ function inStock(product) {
             const isInStock = Math.random() > 0.5
             if (!isInStock) {
                 displayOutOfStockMessage()
+                reject(`${product.id} is out of stock`)
             }
             resolve(isInStock)
         }, Math.ceil(Math.random() * Math.ceil(1)) * 1000)

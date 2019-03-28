@@ -9,35 +9,44 @@ class Cart {
                  * Could also store totals here, as:
                  * totalItems: 0,
                  * totalPrice: 0.0,
+                 * 
+                 * but calculating them by the objects in the cart seems a little 
+                 * less prone to error. For performance concerns, could incorporate
+                 * some kind of caching or use of memoization to limit redundant iterations
                  */
             }
             Cart.singleCart = this
+
         }
+
         return Cart.singleCart
     }
 
-    getTotalItems() {
-        // debugger
-        if (Object.keys(this._data).length < 1) {
-            return 0;
+    getTotals() {
+        const totals = {
+            totalItems: 0,
+            totalPrice: '0'
         }
 
-        return Object.values(this._data).reduce((sum, itemObj) => {
-            if (itemObj.quantity) {
-                return sum + itemObj.quantity
-            }
-            
-        }, 0)
+        if (Object.keys(this._data).length < 1) {
+            return totals;
+        }
+
+        return Object.keys(this._data).reduce((sum, key) => {
+            const itemObj = this._data[key];
+            sum.totalItems += itemObj.quantity
+            sum.totalPrice = (parseFloat(sum.totalPrice) + (parseFloat(itemObj.price) * parseFloat(itemObj.quantity))).toFixed(2);
+
+            console.log(`${key}: ${itemObj.quantity}`)
+
+            return sum
+        }, totals)
     }
 
-    calculateTotalPrice() {
-        if (Object.keys(this._data).length < 1) {
-            return 0;
-        }
+    formattedTotals() {
+        const totals = this.getTotals();
 
-        return Object.values(this._data).reduce((sum, itemObj) => {
-            return Number.toFixed(sum + itemObj.price);
-        }, 0.00)
+        return `${totals.totalItems} | $ ${totals.totalPrice}`
     }
 
     addToCart(product, quantity) {
@@ -51,21 +60,18 @@ class Cart {
                 if (!contents[productId]) {
                     contents[productId] = {
                         productName: product.name,
-                        price: parseFloat(product.price),
+                        price: parseFloat(product.price).toFixed(2),
                         quantity: 0,
                     };
                 }
 
                 contents[productId].quantity += quantity
                 
-                const totalContents = this.getTotalItems();
-                const totalPrice = this.calculateTotalPrice();
-
-                return `${totalContents} | $ ${totalPrice}`
+                return this.formattedTotals();
             })
             .catch(errors => {
                 console.log(errors)
-                // return this.getTotal();
+                return this.formattedTotals();
             })
         }            
     }
